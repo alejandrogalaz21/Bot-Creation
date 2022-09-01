@@ -14,17 +14,17 @@ print(f"{len(docs)} of {len(dir_content)} elements are files.")
 
 # go through all the files and check if they match the search pattern
 for doc in docs:
-    # separate name from file extension
-    doc_name, filetype = os.path.splitext(doc)
+    # # separate name from file extension
+    # doc_name, filetype = os.path.splitext(doc)
 
-    # filter for files with the right extension
-    if filetype == type_filter:
+    # # filter for files with the right extension
+    # if filetype == type_filter:
         # check if search text is in doc name
-        if search in doc_name:
+        if search in doc:
             
             #replace with the given text
-            new_name = doc_name.replace(search, replace) + filetype
-            os.rename(doc, new_name)
+            new_name = doc.replace(search, replace) 
+            # os.rename(doc, new_name)
             renamed += 1
 
             print(f"Renamed file {doc} to {new_name}")
